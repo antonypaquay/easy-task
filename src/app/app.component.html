@@ -3,7 +3,30 @@
 <main>
   <ul id="users">
     <li>
-      <app-user />
+      <app-user
+        (select)="onSelectUser($event)"
+        [user]="users[0]"
+      />
+    </li>
+    <li>
+      <app-user
+        (select)="onSelectUser($event)"
+        [user]="users[1]"
+      />
+    </li>
+    <li>
+      <app-user
+        (select)="onSelectUser($event)"
+        [user]="users[2]"
+      />
+    </li>
+    <li>
+      <app-user
+        (select)="onSelectUser($event)"
+        [user]="users[3]"
+      />
     </li>
   </ul>
+
+  <app-tasks [name]="selectedUser ? selectedUser.name : ''" />
 </main>
